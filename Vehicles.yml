@@ -1,0 +1,146 @@
+RedTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 1
+    display name: "<&f>Red Tractor"
+GreenTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 2
+    display name: "<&f>Green Tractor"
+PurpleTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 3
+    display name: "<&f>Purple Tractor"
+CyanTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 4
+    display name: "<&f>Cyan Tractor"
+LightGrayTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 5
+    display name: "<&f>Light Gray Tractor"
+GrayTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 6
+    display name: "<&f>Gray Tractor"
+PinkTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 7
+    display name: "<&f>Pink Tractor"
+LimeTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 8
+    display name: "<&f>Lime Tractor"
+YellowTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 9
+    display name: "<&f>Yellow Tractor"
+LightBlueTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 10
+    display name: "<&f>Light Blue Tractor"
+MagentaTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 11
+    display name: "<&f>Magenta Tractor"
+OrangeTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 12
+    display name: "<&f>Orange Tractor"
+BlackTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 13
+    display name: "<&f>Black Tractor"
+BrownTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 14
+    display name: "<&f>Brown Tractor"
+BlueTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 15
+    display name: "<&f>Blue Tractor"
+WhiteTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 16
+    display name: "<&f>White Tractor"
+    
+VehicleEvents:
+    type: world
+    debug: false
+    events:
+    
+        on player right clicks with RedTractor:
+        - spawn armor_stand[visible=false] <context.location.add[l@0,1,0]> save:tractor
+        - equip <entry[tractor].spawned_entity> head:i@RedTractor
+        
+        on player right clicks armor_stand:
+        - mount <player>|<context.entity>
+        - determine cancelled
+        
+        on player steers entity:
+        - if !<context.entity.is_npc>:
+            - if !<player.has_flag[vehicleVelocity]>:
+                - flag player vehicleVelocity:0
+            - define vehicleVector <context.entity.location.direction.vector>
+            - define x <player.location.direction.vector.x>
+            - define y <context.entity.location.direction.vector.y>
+            - define z <player.location.direction.vector.z>
+            - define playerVector 'l@<def[x]>,<def[y]>,<def[z]>'
+            - look <context.entity> <context.entity.location.add[<def[playerVector].normalize>]>
+            - if <context.forward> > 0:
+                - if <player.location.add[<context.entity.location.direction.vector>].material> != m@air && <player.location.add[l@0,1,0].add[<context.entity.location.direction.vector>].material> == m@air:
+                    - adjust <context.entity> armor_pose:HEAD|-0.6,0,0
+                    - adjust <context.entity> move:<def[vehicleVector].add[l@0,1.5,0]>
+                - else if <player.location.add[l@0,-1,0].add[<context.entity.location.direction.vector>].material> == m@air:
+                    - adjust <context.entity> armor_pose:HEAD|0.6,0,0
+                    - adjust <context.entity> move:<def[vehicleVector].add[l@0,-1.5,0]>
+                - else:
+                    - adjust <context.entity> armor_pose:HEAD|0,0,0
+                    - adjust <context.entity> move:<def[vehicleVector].mul[2]>
