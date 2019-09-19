@@ -23,6 +23,13 @@ VehicleStartupInit:
     - else:
         - yaml create id:vehicles
         - yaml savefile:data/entities/vehiclesLib.yml id:vehiclelib
+        
+VehicleSpawn:
+    type: task
+    debug: false
+    script:
+    - spawn armor_stand[visible=false] <context.location.add[l@0,1,0]> save:vehicle
+    - equip <entry[vehicle].spawned_entity> head:<def[vehicleItem]>
     
 VehicleEvents:
     type: world
