@@ -1,7 +1,9 @@
 Tractor:
     type: LAND
     speedModifier:
-        standard: 0
+        standard:
+            speed: 0
+            type: NONE
         blocks:
             li@grass_block|podzol|dirt|coarse_dirt:
                 speed: 0.5
