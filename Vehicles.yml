@@ -121,8 +121,9 @@ VehicleEvents:
         - equip <entry[tractor].spawned_entity> head:i@RedTractor
         
         on player right clicks armor_stand:
-        - mount <player>|<context.entity>
-        - determine cancelled
+        - if !<context.entity.has_passenger>:
+            - mount <player>|<context.entity>
+            - determine cancelled
         
         on player steers entity:
         - if !<context.entity.is_npc>:
@@ -143,4 +144,4 @@ VehicleEvents:
                     - adjust <context.entity> move:<def[vehicleVector].add[l@0,-1.5,0]>
                 - else:
                     - adjust <context.entity> armor_pose:HEAD|0,0,0
-                    - adjust <context.entity> move:<def[vehicleVector].mul[2]>
+                    - adjust <context.entity> move:<def[vehicleVector]>
