@@ -1,0 +1,44 @@
+Tractor:
+    type: LAND
+    speedModifier:
+        standard: 0
+        blocks:
+            li@grass_block|podzol|dirt|coarse_dirt:
+                speed: 0.5
+                type: ADD
+            li@black_concrete|yellow_concrete|white_concrete:
+                speed: 0.5
+                type: SUB
+    colors:
+        red:
+            model: i@RedTractor
+        green:
+            model: i@GreenTractor
+        purple:
+            model: i@PurpleTractor
+        cyan:
+            model: i@CyanTractor
+        light_gray:
+            model: i@LightGrayTractor
+        gray:
+            model: i@GrayTractor
+        pink:
+            model: i@PinkTractor
+        lime:
+            model: i@LimeTractor
+        yellow:
+            model: i@YellowTractor
+        light_blue:
+            model: i@LightBlueTractor
+        magenta:
+            model: i@MagentaTractor
+        orange:
+            model: i@OrangeTractor
+        black:
+            model: i@BlackTractor
+        brown:
+            model: i@BrownTractor
+        blue:
+            model: i@BlueTractor
+        white:
+            model: i@WhiteTractor
