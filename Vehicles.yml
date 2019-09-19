@@ -111,10 +111,42 @@ WhiteTractor:
         custom_model_data: 16
     display name: "<&f>White Tractor"
     
+VehicleStartupInit:
+    type: task
+    debug: false
+    script:
+    # Check for Vehicle Database
+    - if <server.has_file[data/entities/vehicles.yml]>:
+        
+        # Load Existing Vehicle Database
+        - yaml load:data/entities/vehicles.yml id:vehicles
+    
+    # Create New One if None Exists
+    - else:
+        - yaml create id:vehicles
+        - yaml savefile:data/entities/vehicles.yml id:vehicles
+        
+    # Check for Vehicle Library
+    - if <server.has_file[data/entities/vehiclesLib.yml]>:
+        
+        # Load Existing Vehicle Database
+        - yaml load:data/entities/vehiclesLib.yml id:vehiclelib
+    
+    # Create New One if None Exists
+    - else:
+        - yaml create id:vehicles
+        - yaml savefile:data/entities/vehiclesLib.yml id:vehiclelib
+    
 VehicleEvents:
     type: world
     debug: false
     events:
+    
+        # Vehicle Master Init #
+        on server prestart:
+        - inject VehicleStartupInit
+        on reload scripts:
+        - inject VehicleStartupInit
     
         on player right clicks with RedTractor:
         - spawn armor_stand[visible=false] <context.location.add[l@0,1,0]> save:tractor
