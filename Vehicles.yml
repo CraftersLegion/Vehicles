@@ -35,9 +35,16 @@ VehicleEvents:
         on reload scripts:
         - inject VehicleStartupInit
     
-        on player right clicks with RedTractor:
-        - spawn armor_stand[visible=false] <context.location.add[l@0,1,0]> save:tractor
-        - equip <entry[tractor].spawned_entity> head:i@RedTractor
+        on player right clicks block:
+        - define vehicleItem null
+        - foreach <yaml[vehiclelib].list_keys[]> as :vehicle:
+            - foreach <yaml[vehiclelib].list_keys[<def[vehicle]>.colors]> as :color:
+                - if <context.item||null> == <yaml[vehiclelib].read[<def[vehicle]>.<def[color]>.model]>:
+                    - define vehicleItem <yaml[vehiclelib].read[<def[vehicle]>.<def[color]>.model]>
+                    - foreach stop
+                    - foreach stop
+        - if <def[vehicleItem]> != null:
+            - inject VehicleSpawn
         
         on player right clicks armor_stand:
         - if !<context.entity.has_passenger>:
