@@ -1,0 +1,112 @@
+RedTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 1
+    display name: "<&f>Red Tractor"
+GreenTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 2
+    display name: "<&f>Green Tractor"
+PurpleTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 3
+    display name: "<&f>Purple Tractor"
+CyanTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 4
+    display name: "<&f>Cyan Tractor"
+LightGrayTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 5
+    display name: "<&f>Light Gray Tractor"
+GrayTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 6
+    display name: "<&f>Gray Tractor"
+PinkTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 7
+    display name: "<&f>Pink Tractor"
+LimeTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 8
+    display name: "<&f>Lime Tractor"
+YellowTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 9
+    display name: "<&f>Yellow Tractor"
+LightBlueTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 10
+    display name: "<&f>Light Blue Tractor"
+MagentaTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 11
+    display name: "<&f>Magenta Tractor"
+OrangeTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 12
+    display name: "<&f>Orange Tractor"
+BlackTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 13
+    display name: "<&f>Black Tractor"
+BrownTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 14
+    display name: "<&f>Brown Tractor"
+BlueTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 15
+    display name: "<&f>Blue Tractor"
+WhiteTractor:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 16
+    display name: "<&f>White Tractor"
