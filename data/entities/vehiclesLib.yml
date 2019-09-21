@@ -1,5 +1,6 @@
 Tractor:
     type: LAND
+    small: false
     speedModifier:
         standard:
             speed: 0
@@ -44,3 +45,50 @@ Tractor:
             model: i@BlueTractor
         white:
             model: i@WhiteTractor
+SmartCar:
+    type: LAND
+    small: true
+    speedModifier:
+        standard:
+            speed: 4
+            type: ADD
+        blocks:
+            li@grass_block|podzol|dirt|coarse_dirt:
+                speed: 0.5
+                type: ADD
+            li@black_concrete|yellow_concrete|white_concrete:
+                speed: 0.5
+                type: SUB
+    colors:
+        red:
+            model: i@RedSmartCar
+        green:
+            model: i@GreenSmartCar
+        purple:
+            model: i@PurpleSmartCar
+        cyan:
+            model: i@CyanSmartCar
+        light_gray:
+            model: i@LightGraySmartCar
+        gray:
+            model: i@GraySmartCar
+        pink:
+            model: i@PinkSmartCar
+        lime:
+            model: i@LimeSmartCar
+        yellow:
+            model: i@YellowSmartCar
+        light_blue:
+            model: i@LightBlueSmartCar
+        magenta:
+            model: i@MagentaSmartCar
+        orange:
+            model: i@OrangeSmartCar
+        black:
+            model: i@BlackSmartCar
+        brown:
+            model: i@BrownSmartCar
+        blue:
+            model: i@BlueSmartCar
+        white:
+            model: i@WhiteSmartCar
