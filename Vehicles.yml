@@ -73,21 +73,24 @@ VehicleEvents:
         
         on player steers entity:
         - if !<context.entity.is_npc>:
-            - if !<player.has_flag[vehicleVelocity]>:
-                - flag player vehicleVelocity:0
-            - define vehicleVector <context.entity.location.direction.vector>
-            - define x <player.location.direction.vector.x>
-            - define y <context.entity.location.direction.vector.y>
-            - define z <player.location.direction.vector.z>
-            - define playerVector 'l@<def[x]>,<def[y]>,<def[z]>'
-            - look <context.entity> <context.entity.location.add[<def[playerVector].normalize>]>
-            - if <context.forward> > 0:
-                - if <player.location.add[<context.entity.location.direction.vector>].material> != m@air && <player.location.add[l@0,1,0].add[<context.entity.location.direction.vector>].material> == m@air:
-                    - adjust <context.entity> armor_pose:HEAD|-0.6,0,0
-                    - adjust <context.entity> move:<def[vehicleVector].add[l@0,1.5,0]>
-                - else if <player.location.add[l@0,-1,0].add[<context.entity.location.direction.vector>].material> == m@air:
-                    - adjust <context.entity> armor_pose:HEAD|0.6,0,0
-                    - adjust <context.entity> move:<def[vehicleVector].add[l@0,-1.5,0]>
-                - else:
-                    - adjust <context.entity> armor_pose:HEAD|0,0,0
-                    - adjust <context.entity> move:<def[vehicleVector]>
+            - if <context.entity.entity_type> == ARMOR_STAND:
+                # Check if Vehicle
+                - if <yaml[vehicles].list_keys[entities].as_list.contains[<context.entity>]>:
+                    - if !<player.has_flag[vehicleVelocity]>:
+                        - flag player vehicleVelocity:0
+                    - define vehicleVector <context.entity.location.direction.vector>
+                    - define x <player.location.direction.vector.x>
+                    - define y <context.entity.location.direction.vector.y>
+                    - define z <player.location.direction.vector.z>
+                    - define playerVector 'l@<def[x]>,<def[y]>,<def[z]>'
+                    - look <context.entity> <context.entity.location.add[<def[playerVector].normalize>]>
+                    - if <context.forward> > 0:
+                        - if <player.location.add[<context.entity.location.direction.vector>].material> != m@air && <player.location.add[l@0,1,0].add[<context.entity.location.direction.vector>].material> == m@air:
+                            - adjust <context.entity> armor_pose:HEAD|-0.6,0,0
+                            - adjust <context.entity> move:<def[vehicleVector].add[l@0,1.5,0]>
+                        - else if <player.location.add[l@0,-1,0].add[<context.entity.location.direction.vector>].material> == m@air:
+                            - adjust <context.entity> armor_pose:HEAD|0.6,0,0
+                            - adjust <context.entity> move:<def[vehicleVector].add[l@0,-1.5,0]>
+                        - else:
+                            - adjust <context.entity> armor_pose:HEAD|0,0,0
+                            - adjust <context.entity> move:<def[vehicleVector]>
