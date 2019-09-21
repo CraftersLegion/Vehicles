@@ -31,6 +31,8 @@ VehicleSpawn:
     
     # Spawn Vehicle
     - spawn armor_stand[visible=false] <context.location.add[l@0,1,0]> save:vehicle
+    - if <yaml[vehiclelib].read[<yaml[vehicles].read[entities.<context.entity>.vehicle]>.small]> == true:
+        - adjust <entry[vehicle].spawn_entity> is_small:true
     - equip <entry[vehicle].spawned_entity> head:<def[vehicleItem]>
     
     # Setup YAML
@@ -38,10 +40,6 @@ VehicleSpawn:
     - yaml id:vehicles set entities.<entry[vehicle].spawned_entity>.vehicle:<def[vehicle]>
     - yaml id:vehicles set entities.<entry[vehicle].spawned_entity>.owner:<player>
     - yaml savefile:data/entities/vehicles.yml id:vehicles
-    
-    # Setup Vehicle Flags
-    - flag <entry[vehicle].spawned_entity> standardSpeedType:<yaml[vehiclelib].read[<yaml[vehicles].read[entities.<entry[vehicle].spawned_entity>.vehicle]>.speedModifier.standard.type]>
-    - flag <entry[vehicle].spawned_entity> standardSpeed:<yaml[vehiclelib].read[<yaml[vehicles].read[entities.<entry[vehicle].spawned_entity>.vehicle]>.speedModifier.standard.speed]>
     
 VehicleEvents:
     type: world
@@ -52,6 +50,8 @@ VehicleEvents:
         on server prestart:
         - inject VehicleStartupInit
         on reload scripts:
+        - yaml unload id:vehiclelib
+        - yaml unload id:vehicles
         - inject VehicleStartupInit
     
         on player right clicks block:
@@ -72,6 +72,9 @@ VehicleEvents:
             - if !<context.entity.has_passenger>:
                 # Check if Rider is Owner
                 - if <player> == <yaml[vehicles].read[entities.<context.entity>.owner]>:
+                    # Setup Vehicle Flags
+                    - flag <context.entity> standardSpeedType:<yaml[vehiclelib].read[<yaml[vehicles].read[entities.<context.entity>.vehicle]>.speedModifier.standard.type]>
+                    - flag <context.entity> standardSpeed:<yaml[vehiclelib].read[<yaml[vehicles].read[entities.<context.entity>.vehicle]>.speedModifier.standard.speed]>
                     - mount <player>|<context.entity>
             - determine cancelled
         
@@ -82,9 +85,9 @@ VehicleEvents:
                 - if <yaml[vehicles].list_keys[entities].as_list.contains[<context.entity>]>:
                     - if <yaml[vehiclelib].read[<yaml[vehicles].read[entities.<context.entity>.vehicle]>.type]> == LAND:
                         - if <context.entity.flag[standardSpeedType]> == ADD:
-                            - define vehicleVector <context.entity.location.direction.vector.mul[<context.entity.flag[standardSpeed]>
+                            - define vehicleVector <context.entity.location.direction.vector.mul[<context.entity.flag[standardSpeed]>]>
                         - else if <context.entity.flag[standardSpeedType]> == SUB:
-                            - define vehicleVector <context.entity.location.direction.vector.div[<context.entity.flag[standardSpeed]>
+                            - define vehicleVector <context.entity.location.direction.vector.div[<context.entity.flag[standardSpeed]>]>
                         - else:
                             - define vehicleVector <context.entity.location.direction.vector>
                         - define x <player.location.direction.vector.x>
@@ -93,12 +96,5 @@ VehicleEvents:
                         - define playerVector 'l@<def[x]>,<def[y]>,<def[z]>'
                         - look <context.entity> <context.entity.location.add[<def[playerVector].normalize>]>
                         - if <context.forward> > 0:
-                            - if <player.location.add[<context.entity.location.direction.vector>].material> != m@air && <player.location.add[l@0,1,0].add[<context.entity.location.direction.vector>].material> == m@air:
-                                - adjust <context.entity> armor_pose:HEAD|-0.6,0,0
-                                - adjust <context.entity> move:<def[vehicleVector].add[l@0,1.5,0]>
-                            - else if <player.location.add[l@0,-1,0].add[<context.entity.location.direction.vector>].material> == m@air:
-                                - adjust <context.entity> armor_pose:HEAD|0.6,0,0
-                                - adjust <context.entity> move:<def[vehicleVector].add[l@0,-1.5,0]>
-                            - else:
-                                - adjust <context.entity> armor_pose:HEAD|0,0,0
-                                - adjust <context.entity> move:<def[vehicleVector]>
+                            - adjust <context.entity> armor_pose:HEAD|0,0,0
+                            - adjust <context.entity> move:<def[vehicleVector]>
