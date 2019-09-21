@@ -62,8 +62,13 @@ VehicleEvents:
             - inject VehicleSpawn
         
         on player right clicks armor_stand:
-        - if !<context.entity.has_passenger>:
-            - mount <player>|<context.entity>
+        # Check if Vehicle
+        - if <yaml[vehicles].list_keys[entities].as_list.contains[<context.entity>]>:
+            # Check Passenger Not Already Riding
+            - if !<context.entity.has_passenger>:
+                # Check if Rider is Owner
+                - if <player> == <yaml[vehicles].read[entities.<context.entity>.owner]>:
+                    - mount <player>|<context.entity>
             - determine cancelled
         
         on player steers entity:
