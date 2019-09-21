@@ -44,8 +44,8 @@ VehicleEvents:
     
         on player right clicks block:
         - define vehicleItem null
-        - foreach <yaml[vehiclelib].list_keys[]> as :vehicle:
-            - foreach <yaml[vehiclelib].list_keys[<def[vehicle]>.colors]> as :color:
+        - foreach <yaml[vehiclelib].list_keys[]> as:vehicle:
+            - foreach <yaml[vehiclelib].list_keys[<def[vehicle]>.colors]> as:color:
                 - if <context.item||null> == <yaml[vehiclelib].read[<def[vehicle]>.colors.<def[color]>.model]>:
                     - define vehicleItem <yaml[vehiclelib].read[<def[vehicle]>.colors.<def[color]>.model]>
                     - foreach stop
