@@ -39,8 +39,11 @@ VehicleSpawn:
     - yaml id:vehicles set entities.<entry[vehicle].spawned_entity>.owner:<player>
     - yaml savefile:data/entities/vehicles.yml id:vehicles
     
+    # Remove Item
+    - inventory remove d:<player.inventory> o:<context.item>
+    
     # Entity Size Mapping
-    - if <yaml[vehiclelib].read[<yaml[vehicles].read[entities.<entry[vehicle].spawned_entity>.vehicle]>.small]> == true:
+    - if <yaml[vehiclelib].read[<yaml[vehicles].read[entities.<entry[vehicle].spawned_entity>.vehicle]>.small]||null> == true:
         - adjust <entry[vehicle].spawned_entity> is_small:true
     
 VehicleEvents:
