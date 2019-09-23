@@ -110,3 +110,227 @@ WhiteTractor:
     mechanisms:
         custom_model_data: 16
     display name: "<&f>White Tractor"
+RedSmartCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 17
+    display name: "<&f>Red Smart Car"
+GreenSmartCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 18
+    display name: "<&f>Green Smart Car"
+PurpleSmartCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 19
+    display name: "<&f>Purple Smart Car"
+CyanSmartCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 20
+    display name: "<&f>Cyan Smart Car"
+LightGraySmartCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 21
+    display name: "<&f>Light Gray Smart Car"
+GraySmartCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 22
+    display name: "<&f>Gray Smart Car"
+PinkSmartCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 23
+    display name: "<&f>Pink Smart Car"
+LimeSmartCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 24
+    display name: "<&f>Lime Smart Car"
+YellowSmartCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 25
+    display name: "<&f>Yellow Smart Car"
+LightBlueSmartCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 26
+    display name: "<&f>Light Blue Smart Car"
+MagentaSmartCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 27
+    display name: "<&f>Magenta Smart Car"
+OrangeSmartCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 28
+    display name: "<&f>Orange Smart Car"
+BlackSmartCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 29
+    display name: "<&f>Black Smart Car"
+BrownSmartCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 30
+    display name: "<&f>Brown Smart Car"
+BlueSmartCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 31
+    display name: "<&f>Blue Smart Car"
+WhiteSmartCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 32
+    display name: "<&f>White Smart Car"
+RedBumperCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 33
+    display name: "<&f>Red Bumper Car"
+GreenBumperCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 34
+    display name: "<&f>Green Bumper Car"
+PurpleBumperCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 35
+    display name: "<&f>Purple Bumper Car"
+CyanBumperCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 36
+    display name: "<&f>Cyan Bumper Car"
+LightGrayBumperCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 37
+    display name: "<&f>Light Gray Bumper Car"
+GrayBumperCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 38
+    display name: "<&f>Gray Bumper Car"
+PinkBumperCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 39
+    display name: "<&f>Pink Bumper Car"
+LimeBumperCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 40
+    display name: "<&f>Lime Bumper Car"
+YellowBumperCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 41
+    display name: "<&f>Yellow Bumper Car"
+LightBlueBumperCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 42
+    display name: "<&f>Light Blue Bumper Car"
+MagentaBumperCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 43
+    display name: "<&f>Magenta Bumper Car"
+OrangeBumperCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 44
+    display name: "<&f>Orange Bumper Car"
+BlackBumperCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 45
+    display name: "<&f>Black Bumper Car"
+BrownBumperCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 46
+    display name: "<&f>Brown Bumper Car"
+BlueBumperCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 47
+    display name: "<&f>Blue Bumper Car"
+WhiteBumperCar:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 48
+    display name: "<&f>White Bumper Car"
