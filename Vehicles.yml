@@ -100,22 +100,20 @@ VehicleEvents:
                         - define z <player.location.direction.vector.z>
                         - define playerVector 'l@<def[x]>,<def[y]>,<def[z]>'
                         - look <context.entity> <context.entity.location.add[<def[playerVector].normalize>]>
+                        - define materials li@m@air|m@grass|m@poppy|m@dandelion|m@oak_fence|m@spruce_fence|m@acacia_fence|m@birch_fence|m@jungle_fence|m@dark_oak_fence
                         
                         - if <context.forward> > 0:
                             - if <yaml[vehiclelib].read[<yaml[vehicles].read[entities.<context.entity>.vehicle]>.small]||null> == true:
-                                - if <player.location.add[l@0,1,0].add[<context.entity.location.direction.vector>].material> != m@air && <player.location.add[l@0,2,0].add[<context.entity.location.direction.vector>].material> == m@air:
+                                - if !<def[materials].as_list.contains[<player.location.add[l@0,1,0].add[<context.entity.location.direction.vector>].material>]> && <player.location.add[l@0,2,0].add[<context.entity.location.direction.vector>].material> == m@air:
                                     - adjust <context.entity> armor_pose:HEAD|-0.6,0,0
                                     - adjust <context.entity> move:<def[vehicleVector].add[l@0,1.5,0]>
-                                    - narrate <player.location.add[l@0,1,0].add[<context.entity.location.direction.vector>].material>
                                 - else:
                                     - adjust <context.entity> armor_pose:HEAD|0,0,0
                                     - adjust <context.entity> move:<def[vehicleVector]>
                             - else:
-                                - define materials li@m@air|m@grass|m@poppy|m@dandelion|m@oak_fence|m@spruce_fence|m@acacia_fence|m@birch_fence|m@jungle_fence|m@dark_oak_fence
                                 - if !<def[materials].as_list.contains[<player.location.add[<context.entity.location.direction.vector>].material>]> && <player.location.add[l@0,1,0].add[<context.entity.location.direction.vector>].material> == m@air:
                                     - adjust <context.entity> armor_pose:HEAD|-0.6,0,0
                                     - adjust <context.entity> move:<def[vehicleVector].add[l@0,1.5,0]>
-                                    - narrate <player.location.add[<context.entity.location.direction.vector>].material>
                                 - else if <player.location.add[l@0,-1,0].add[<context.entity.location.direction.vector>].material> == m@air:
                                     - adjust <context.entity> armor_pose:HEAD|0.6,0,0
                                     - adjust <context.entity> move:<def[vehicleVector].add[l@0,-1.5,0]>
