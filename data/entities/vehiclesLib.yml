@@ -139,3 +139,50 @@ BumperCar:
             model: i@BlueBumperCar
         white:
             model: i@WhiteBumperCar
+PickupTruck:
+    type: LAND
+    small: true
+    speedModifier:
+        standard:
+            speed: 1.5
+            type: SUB
+        blocks:
+            li@grass_block|podzol|dirt|coarse_dirt:
+                speed: 0.5
+                type: ADD
+            li@black_concrete|yellow_concrete|white_concrete:
+                speed: 0.5
+                type: SUB
+    colors:
+        red:
+            model: i@RedPickupTruck
+        green:
+            model: i@GreenPickupTruck
+        purple:
+            model: i@PurplePickupTruck
+        cyan:
+            model: i@CyanPickupTruck
+        light_gray:
+            model: i@LightGrayPickupTruck
+        gray:
+            model: i@GrayPickupTruck
+        pink:
+            model: i@PinkPickupTruck
+        lime:
+            model: i@LimePickupTruck
+        yellow:
+            model: i@YellowPickupTruck
+        light_blue:
+            model: i@LightBluePickupTruck
+        magenta:
+            model: i@MagentaPickupTruck
+        orange:
+            model: i@OrangePickupTruck
+        black:
+            model: i@BlackPickupTruck
+        brown:
+            model: i@BrownPickupTruck
+        blue:
+            model: i@BluePickupTruck
+        white:
+            model: i@WhitePickupTruck
