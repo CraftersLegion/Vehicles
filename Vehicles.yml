@@ -94,6 +94,10 @@ VehicleEvents:
                 - else:
                     - define color <context.item.display.as_element.split[<&sp>].get[1].to_lowercase>
                 - equip <context.entity> head:<yaml[vehiclelib].read[<yaml[vehicles].read[entities.<context.entity>.vehicle]>.colors.<def[color]>.model]>
+                
+                # Remove Item
+                - if <player.gamemode> != CREATIVE:
+                    - take iteminhand from:<player.inventory>
             - else:
                 - determine cancelled
             - determine cancelled
