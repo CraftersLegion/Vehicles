@@ -45,6 +45,24 @@ VehicleSpawn:
     # Entity Size Mapping
     - if <yaml[vehiclelib].read[<yaml[vehicles].read[entities.<entry[vehicle].spawned_entity>.vehicle]>.small]||null> == true:
         - adjust <entry[vehicle].spawned_entity> is_small:true
+        
+SprayCanEvents:
+    type: world
+    debug: false
+    events:
+    
+        on player clicks block with wooden_pickaxe:
+        - if <context.item.has_custom_model_data>:
+            - determine cancelled
+        on player right clicks armor_stand with wooden_pickaxe:
+        - if <context.item.has_custom_model_data>:
+            - if <context.item.display.as_element.split[<&sp>].get[1].to_lowercase> == "light":
+                - define color "<context.item.display.as_element.split[<&sp>].get[1].to_lowercase>_<context.item.display.as_element.split[<&sp>].get[2].to_lowercase>"
+            - else:
+                - define color <context.item.display.as_element.split[<&sp>].get[1].to_lowercase>
+            - equip <context.entity> head:<yaml[vehiclelib].read[<yaml[vehicles].read[entities.<context.entity>.vehicle]>.colors.<def[color]>.model]>
+        - else:
+            - determine cancelled
     
 VehicleEvents:
     type: world
@@ -73,15 +91,16 @@ VehicleEvents:
         on player right clicks armor_stand:
         # Check if Vehicle
         - if <yaml[vehicles].list_keys[entities].as_list.contains[<context.entity>]>:
-            # Check Passenger Not Already Riding
-            - if !<context.entity.has_passenger>:
-                # Check if Rider is Owner
-                - if <player> == <yaml[vehicles].read[entities.<context.entity>.owner]>:
-                    # Setup Vehicle Flags
-                    - flag <context.entity> standardSpeedType:<yaml[vehiclelib].read[<yaml[vehicles].read[entities.<context.entity>.vehicle]>.speedModifier.standard.type]>
-                    - flag <context.entity> standardSpeed:<yaml[vehiclelib].read[<yaml[vehicles].read[entities.<context.entity>.vehicle]>.speedModifier.standard.speed]>
-                    - mount <player>|<context.entity>
-            - determine cancelled
+            - if <context.item||null> == null:
+                # Check Passenger Not Already Riding
+                - if !<context.entity.has_passenger>:
+                    # Check if Rider is Owner
+                    - if <player> == <yaml[vehicles].read[entities.<context.entity>.owner]>:
+                        # Setup Vehicle Flags
+                        - flag <context.entity> standardSpeedType:<yaml[vehiclelib].read[<yaml[vehicles].read[entities.<context.entity>.vehicle]>.speedModifier.standard.type]>
+                        - flag <context.entity> standardSpeed:<yaml[vehiclelib].read[<yaml[vehicles].read[entities.<context.entity>.vehicle]>.speedModifier.standard.speed]>
+                        - mount <player>|<context.entity>
+                - determine cancelled
         
         on player steers entity:
         - if !<context.entity.is_npc>:
