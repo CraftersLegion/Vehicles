@@ -135,3 +135,14 @@ VehicleEvents:
                                 - else:
                                     - adjust <context.entity> armor_pose:HEAD|0,0,0
                                     - adjust <context.entity> move:<def[vehicleVector]>
+                                    
+VehicleCommand:
+    type: command
+    debug: false
+    name: vehicle
+    aliases:
+    - v
+    script:
+    - foreach <yaml[vehicles].list_keys[entities]> as:vehicle:
+        - remove <def[vehicle].as_entity>
+        - yaml id:vehicles set entities.<def[vehicle]>:!
