@@ -334,3 +334,115 @@ WhiteBumperCar:
     mechanisms:
         custom_model_data: 48
     display name: "<&f>White Bumper Car"
+RedPickupTruck:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 49
+    display name: "<&f>Red Pickup Truck"
+GreenPickupTruck:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 50
+    display name: "<&f>Green Pickup Truck"
+PurplePickupTruck:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 51
+    display name: "<&f>Purple Pickup Truck"
+CyanPickupTruck:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 52
+    display name: "<&f>Cyan Pickup Truck"
+LightGrayPickupTruck:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 53
+    display name: "<&f>Light Gray Pickup Truck"
+GrayPickupTruck:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 54
+    display name: "<&f>Gray Pickup Truck"
+PinkPickupTruck:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 55
+    display name: "<&f>Pink Pickup Truck"
+LimePickupTruck:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 56
+    display name: "<&f>Lime Pickup Truck"
+YellowPickupTruck:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 57
+    display name: "<&f>Yellow Pickup Truck"
+LightBluePickupTruck:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 58
+    display name: "<&f>Light Blue Pickup Truck"
+MagentaPickupTruck:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 59
+    display name: "<&f>Magenta Pickup Truck"
+OrangePickupTruck:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 60
+    display name: "<&f>Orange Pickup Truck"
+BlackPickupTruck:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 61
+    display name: "<&f>Black Pickup Truck"
+BrownPickupTruck:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 62
+    display name: "<&f>Brown Pickup Truck"
+BluePickupTruck:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 63
+    display name: "<&f>Blue Pickup Truck"
+WhitePickupTruck:
+    type: item
+    debug: false
+    material: i@DIAMOND_PICKAXE
+    mechanisms:
+        custom_model_data: 64
+    display name: "<&f>White Pickup Truck"
