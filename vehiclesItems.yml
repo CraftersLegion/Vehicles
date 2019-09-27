@@ -446,3 +446,115 @@ WhitePickupTruck:
     mechanisms:
         custom_model_data: 64
     display name: "<&f>White Pickup Truck"
+RedSprayCan:
+    type: item
+    debug: false
+    display name: "Red Spray Can"
+    material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
+    mechanisms:
+        custom_model_data: 1        
+GreenSprayCan:
+    type: item
+    debug: false
+    display name: "Green Spray Can"
+    material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
+    mechanisms:
+        custom_model_data: 2        
+PurpleSprayCan:
+    type: item
+    debug: false
+    display name: "Purple Spray Can"
+    material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
+    mechanisms:
+        custom_model_data: 3        
+CyanSprayCan:
+    type: item
+    debug: false
+    display name: "Cyan Spray Can"
+    material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
+    mechanisms:
+        custom_model_data: 4        
+Light_graySprayCan:
+    type: item
+    debug: false
+    display name: "Light_gray Spray Can"
+    material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
+    mechanisms:
+        custom_model_data: 5        
+GraySprayCan:
+    type: item
+    debug: false
+    display name: "Gray Spray Can"
+    material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
+    mechanisms:
+        custom_model_data: 6        
+PinkSprayCan:
+    type: item
+    debug: false
+    display name: "Pink Spray Can"
+    material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
+    mechanisms:
+        custom_model_data: 7        
+LimeSprayCan:
+    type: item
+    debug: false
+    display name: "Lime Spray Can"
+    material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
+    mechanisms:
+        custom_model_data: 8        
+YellowSprayCan:
+    type: item
+    debug: false
+    display name: "Yellow Spray Can"
+    material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
+    mechanisms:
+        custom_model_data: 9        
+Light_blueSprayCan:
+    type: item
+    debug: false
+    display name: "Light_blue Spray Can"
+    material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
+    mechanisms:
+        custom_model_data: 10        
+MagentaSprayCan:
+    type: item
+    debug: false
+    display name: "Magenta Spray Can"
+    material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
+    mechanisms:
+        custom_model_data: 11        
+OrangeSprayCan:
+    type: item
+    debug: false
+    display name: "Orange Spray Can"
+    material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
+    mechanisms:
+        custom_model_data: 12        
+BlackSprayCan:
+    type: item
+    debug: false
+    display name: "Black Spray Can"
+    material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
+    mechanisms:
+        custom_model_data: 13        
+BrownSprayCan:
+    type: item
+    debug: false
+    display name: "Brown Spray Can"
+    material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
+    mechanisms:
+        custom_model_data: 14        
+BlueSprayCan:
+    type: item
+    debug: false
+    display name: "Blue Spray Can"
+    material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
+    mechanisms:
+        custom_model_data: 15        
+WhiteSprayCan:
+    type: item
+    debug: false
+    display name: "White Spray Can"
+    material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
+    mechanisms:
+        custom_model_data: 16
