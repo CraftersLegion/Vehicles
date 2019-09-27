@@ -474,10 +474,10 @@ CyanSprayCan:
     material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
     mechanisms:
         custom_model_data: 4        
-Light_graySprayCan:
+LightGraySprayCan:
     type: item
     debug: false
-    display name: "Light_gray Spray Can"
+    display name: "Light Gray Spray Can"
     material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
     mechanisms:
         custom_model_data: 5        
@@ -509,10 +509,10 @@ YellowSprayCan:
     material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
     mechanisms:
         custom_model_data: 9        
-Light_blueSprayCan:
+LightBlueSprayCan:
     type: item
     debug: false
-    display name: "Light_blue Spray Can"
+    display name: "Light Blue Spray Can"
     material: i@WOODEN_PICKAXE[flags=HIDE_ATTRIBUTES]
     mechanisms:
         custom_model_data: 10        
