@@ -46,8 +46,8 @@ VehicleSpawn:
     # Entity Size Mapping
     - if <yaml[vehiclelib].read[<yaml[vehicles].read[entities.<entry[vehicle].spawned_entity>.vehicle]>.small]||null> == true:
         - adjust <entry[vehicle].spawned_entity> is_small:true
-        
-SprayCanEvents:
+    
+VehicleEvents:
     type: world
     debug: false
     events:
@@ -55,20 +55,6 @@ SprayCanEvents:
         on player clicks block with wooden_pickaxe:
         - if <context.item.has_custom_model_data>:
             - determine cancelled
-        on player right clicks armor_stand with wooden_pickaxe:
-        - if <context.item.has_custom_model_data>:
-            - if <context.item.display.as_element.split[<&sp>].get[1].to_lowercase> == "light":
-                - define color "<context.item.display.as_element.split[<&sp>].get[1].to_lowercase>_<context.item.display.as_element.split[<&sp>].get[2].to_lowercase>"
-            - else:
-                - define color <context.item.display.as_element.split[<&sp>].get[1].to_lowercase>
-            - equip <context.entity> head:<yaml[vehiclelib].read[<yaml[vehicles].read[entities.<context.entity>.vehicle]>.colors.<def[color]>.model]>
-        - else:
-            - determine cancelled
-    
-VehicleEvents:
-    type: world
-    debug: false
-    events:
     
         # Vehicle Master Init #
         on server prestart:
@@ -102,7 +88,15 @@ VehicleEvents:
                         - flag <context.entity> standardSpeedType:<yaml[vehiclelib].read[<yaml[vehicles].read[entities.<context.entity>.vehicle]>.speedModifier.standard.type]>
                         - flag <context.entity> standardSpeed:<yaml[vehiclelib].read[<yaml[vehicles].read[entities.<context.entity>.vehicle]>.speedModifier.standard.speed]>
                         - mount <player>|<context.entity>
+            - else if <context.item.has_custom_model_data>:
+                - if <context.item.display.as_element.split[<&sp>].get[1].to_lowercase> == "light":
+                    - define color "<context.item.display.as_element.split[<&sp>].get[1].to_lowercase>_<context.item.display.as_element.split[<&sp>].get[2].to_lowercase>"
+                - else:
+                    - define color <context.item.display.as_element.split[<&sp>].get[1].to_lowercase>
+                - equip <context.entity> head:<yaml[vehiclelib].read[<yaml[vehicles].read[entities.<context.entity>.vehicle]>.colors.<def[color]>.model]>
+            - else:
                 - determine cancelled
+            - determine cancelled
         
         on player steers entity:
         - if !<context.entity.is_npc>:
