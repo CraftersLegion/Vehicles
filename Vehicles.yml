@@ -40,7 +40,8 @@ VehicleSpawn:
     - yaml savefile:data/entities/vehicles.yml id:vehicles
     
     # Remove Item
-    - inventory remove d:<player.inventory> o:<context.item>
+    - if <player.gamemode> != CREATIVE:
+        - take iteminhand from:<player.inventory>
     
     # Entity Size Mapping
     - if <yaml[vehiclelib].read[<yaml[vehicles].read[entities.<entry[vehicle].spawned_entity>.vehicle]>.small]||null> == true:
