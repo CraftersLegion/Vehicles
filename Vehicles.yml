@@ -79,7 +79,7 @@ VehicleEvents:
         on player right clicks armor_stand:
         # Check if Vehicle
         - if <yaml[vehicles].list_keys[entities].as_list.contains[<context.entity>]>:
-            - if <context.item||null> == null:
+            - if <context.item||null> == i@air:
                 # Check Passenger Not Already Riding
                 - if !<context.entity.has_passenger>:
                     # Check if Rider is Owner
